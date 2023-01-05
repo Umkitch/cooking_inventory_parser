@@ -7,6 +7,10 @@ response = requests.get(url)
 
 soup = bs(response.text, 'lxml')
 
+title = soup.title
+print(title.text.upper())
+print()
+
 inventory = soup.find_all('h2')
 
 for item in inventory:
